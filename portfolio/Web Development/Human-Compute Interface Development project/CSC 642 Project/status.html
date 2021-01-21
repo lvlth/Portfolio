@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<!-- status.html -->
+<!-- Security -->
+<!--Lavante Hammond -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bedrock Security | Status</title>
+    <link rel="stylesheet" href="./css/style6.css">
+
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1>
+                Alarms
+                <div class="backbtn">
+                    <button type="button" onclick="back()" style="
+                    height: 40px;
+                    width: 60px;
+                    background-image: url('./img/back.png');
+                    background-size: cover;
+                    background-position: center;
+                    transform:translateY(-20px);
+                    "></button>
+                </div>
+            </h1>
+        </div>
+    </header>
+
+
+    <div class="sub_header">
+        <h2> View status</h2>
+    </div>
+
+    <div>
+        <h3>Fire Alarms</h3>
+    </div>
+
+    <div class="firealarms">
+        <table style="width:100%">
+            <tr>
+                <th><h3>Room</h3></th>
+                <th><h3>Battery level</h3></th>
+                <th><h3>Power</h3></th>
+            </tr>
+            <tr>
+                <th>Kitchen</th>
+                <th> 100% </th>
+                <th><button class="toggle" type="button" onclick="toggle()">OFF</button> </th>
+            </tr>
+            <tr>
+                <th>Lisa's Room</th>
+                <th> 100% </th>
+                <th><button class="toggle" type="button" onclick="toggle()">OFF</button> </th>
+            </tr>
+            <tr>
+                <th>Master Bedroom</th>
+                <th> 100% </th>
+                <th><button class="toggle" type="button" onclick="toggle()">OFF</button> </th>
+            </tr>
+            <tr>
+                <th>Guest Bedroom</th>
+                <th> 100% </th>
+                <th><button class="toggle" type="button" onclick="toggle()">OFF</button> </th>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <h3>CO2 Detectors</h3>
+    </div>
+
+    <div class="codetectors">
+        <table style="width:100%">
+            <tr>
+                <th><h3>Room</h3></th>
+                <th><h3>Battery level</h3></th>
+                <th><h3>Power</h3></th>
+            </tr>
+            <tr>
+                <th> Downstairs Hallway </th>
+                <th>100%</th>
+                <th><button class="toggle" type="button" onclick="toggle()">OFF</button> </th>
+            </tr>
+            <tr>
+                <th> Upstairs Hallway </th>
+                <th>100%</th>
+                <th><button class="toggle" type="button" onclick="toggle()">OFF</button> </th>
+            </tr>
+        </table>
+
+        <script>
+            function toggle() {
+                var ver = window.confirm("This will effect all fire and CO2 alarms. Would you like to proceed?");
+                var tog = document.getElementsByClassName("toggle");
+
+                if (ver == true) {
+                    for (i = 0; i < tog.length; i++) {
+                        if (tog[i].style.backgroundColor == "red") {
+                            tog[i].style.backgroundColor = "grey";
+                            tog[i].textContent = "OFF";
+                        }
+                        else {
+                            tog[i].style.backgroundColor = "red";
+                            tog[i].textContent = "ON";
+                        }
+
+                    }
+                }
+
+
+
+            }
+
+            function back() {
+                window.history.back();
+            }
+
+        </script>
+    </div>
+
+    <footer>
+        <p>Bedrock Security, Copyright &copy; 2020</p>
+    </footer>
+</body>
+
+
+
+</html>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML>
+
+<!-- index.html -->
+<!-- Security -->
+<!--Lavante Hammond -->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Leave no stone unturned">
+    <meta name="keywords" content="security, bedrock, smart home">
+    <meta name="author" content="Lavante Hammond">
+    <title>Bedrock Security | Home</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1>
+                Home
+                <div class="helpbtn">
+                    <button type="button" onclick="location.href='help.html'">Help</button>
+                </div>
+            </h1>
+        </div>
+    </header>
+
+    <div id="caBanner" class="communityAlertBanner">
+        <div id="communityalert" class="communityAlerts">
+            <span class="closebtn" onclick="this.parentElement.style.display = 'none'; check()">&times;</span>
+            **FLASH FLOOD WARNING IN YOUR AREA** <br />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="left" onclick="location.href='alarms.html'">
+        </div>
+        <div class="right" onclick="location.href='cameras.html'">
+        </div>
+
+    </div>
+
+    <script>
+        function check() {
+            var element = document.getElementById("communityalert");
+            var container = document.getElementById("caBanner");
+            var numOfChildren = element.children.length;
+
+
+            if (numOfChildren <= 2) {
+                container.style.display = "none";
+            }
+        }
+
+    </script>
+
+
+    <footer class="footer">
+        <p>Bedrock Security, Copyright &copy; 2020</p>
+    </footer>
+
+</body>
+</html>

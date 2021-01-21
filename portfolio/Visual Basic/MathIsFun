@@ -1,0 +1,78 @@
+'Unit 13 Math is Fun
+'Lavante Hammond
+'May, 1 2016
+'
+'At the start of the program 2 labels, a menu strip, and a textbox should be visible
+'
+'This program finds the absolute value, square root, sign, and rounds a number input by the user
+
+Public Class Form1
+
+    Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
+        Application.Exit()
+    End Sub
+
+    Private Sub AbsoluteValueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AbsoluteValueToolStripMenuItem.Click
+        Dim dblNum As Double
+        Dim input As String
+
+        Try
+            input = txtInput.Text
+            dblNum = Convert.ToDouble(input)
+            lblAnswer.Text = "The absolute value is" & Math.Abs(dblNum) 'Finds absolute value
+        Catch ex As Exception
+            MessageBox.Show("Enter numeric values")
+        End Try
+    End Sub
+
+    Private Sub SquareRootToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SquareRootToolStripMenuItem.Click
+        Dim dblNum As Double
+        Dim input As String
+
+        Try
+            input = txtInput.Text
+            dblNum = Convert.ToDouble(input)
+            lblAnswer.Text = "The Square root is" & Math.Sqrt(dblNum) 'Finds square root
+        Catch ex As Exception
+            MessageBox.Show("Enter numeric values")
+        End Try
+    End Sub
+
+    Private Sub SignToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SignToolStripMenuItem.Click
+        Dim dblNum As Double
+        Dim input As String
+
+        Try
+            input = txtInput.Text
+            dblNum = Convert.ToDouble(input)
+            'Determines the sign of the number
+
+            If (Math.Sign(dblNum) > 0) Then
+                lblAnswer.Text = dblNum & " is a positive number"
+            ElseIf (Math.Sign(dblNum) < 0) Then
+                lblAnswer.Text = dblNum & " is a negative number"
+            Else
+                lblAnswer.Text = dblNum & " is a zero "
+            End If
+
+
+        Catch ex As Exception
+            MessageBox.Show("Enter a numeric value")
+        End Try
+    End Sub
+
+    Private Sub RoundToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RoundToolStripMenuItem.Click
+        Dim dblNum As Double
+        Dim input As String
+        Dim intPlaces As Integer
+
+        Try
+            input = txtInput.Text
+            dblNum = Convert.ToDouble(input)
+            intPlaces = Convert.ToInt16(InputBox("Enter the number of places", "Places to round"))
+            lblAnswer.Text = dblNum & " rounded to " & intPlaces & " is" & Math.Round(dblNum, intPlaces) 'Rounds based on user input
+        Catch ex As Exception
+            MessageBox.Show("Enter a numeric value")
+        End Try
+    End Sub
+End Class

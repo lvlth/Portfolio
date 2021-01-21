@@ -1,0 +1,177 @@
+﻿<!DOCTYPE HTML>
+
+<!-- help.html -->
+<!--Security-->
+<!--Lavante Hammond -->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Leave no stone unturned">
+    <meta name="keywords" content="security, bedrock, smart home">
+    <meta name="author" content="Lavante Hammond">
+    <title>Bedrock Security | Help</title>
+    <link rel="stylesheet" href="./css/style7.css">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <h1>
+                Help
+                <div style="float: left">
+                    <button type="button" onclick="back()" style="
+                    height: 40px;
+                    width: 60px;
+                    background-image: url('./img/back.png');
+                    background-size: cover;
+                    background-position: center;
+                    transform:translateY(-20px);
+                    "></button>
+                </div>
+            </h1>
+        </div>
+    </header>
+
+    <div class="tab">
+        <button class="tablinks" onclick="tabChange(event, 'Home')" id="defaultOpen">Home</button>
+        <button class="tablinks" onclick="tabChange(event, 'Cameras')">Cameras</button>
+        <button class="tablinks" onclick="tabChange(event, 'Alarms')">Alarms</button>
+        <button class="tablinks" onclick="tabChange(event, 'History')">History</button>
+        <button class="tablinks" onclick="tabChange(event, 'Activity')">View Activity</button>
+        <button class="tablinks" onclick="tabChange(event, 'Status')">View Status</button>
+    </div>
+
+
+    <div id="Home" class="tabcontent">
+        <h2>
+            Home
+        </h2>
+        <img src="./screenshots/home.png" />
+        <p>The home page is used to navigate between the house alarms (left) and cameras (right). </p>
+    </div>
+
+    <div id="Cameras" class="tabcontent">
+
+        <h2>
+            Cameras
+        </h2>
+        <img src="./screenshots/cameras.png" />
+        <p>
+            The cameras page provides access to all video surveillance functions.
+            <ul>
+                <li>Video Player - View live video footage of your home.</li>
+                <li>Talk button - Allows you to communicate through the surveillance cameras by clicking and holding.</li>
+                <li>History - Access surveillance camera history.</li>
+                <li>Video selector - Switch between cameras.</li>
+            </ul>
+        </p>
+
+    </div>
+
+    <div id="Alarms" class="tabcontent">
+        <h2>
+            Alarms
+        </h2>
+        <img src="./screenshots/alarms.png" />
+        <p>
+            The alarms page is used to access your home's alarm system.
+            <ul>
+                <li>Arm(stay) - Sets the alarm to stay mode.</li>
+                <li>Arm(away) - Sets the alarm to away mode.</li>
+                <li>Disarm - Used to disarm the system after it has been set.</li>
+                <li>View activity - View all alarm history. </li>
+                <li>View status - View the status of all house hold alarms.</li>
+                <li>Panic button - Immediately notifies local authorities.</li>
+            </ul>
+
+        </p>
+
+
+    </div>
+
+    <div id="History" class="tabcontent">
+
+        <h2>
+            History
+        </h2>
+        <img src="./screenshots/history.png" />
+        <p>The history page is used to view previously recorded surveillance footage.</p>
+        <ul>
+            <li>Search bar - Search for a specific date.</li>
+            <li>View button - View recording.</li>
+        </ul>
+
+    </div>
+
+    <div id="Activity" class="tabcontent">
+
+        <h2>
+            View Activity
+        </h2>
+        <img src="./screenshots/activity.png" />
+        <p>
+            The view activity page is used to view previous alarm history. It shows the date, time,
+            and the activity performed.
+            <ul>
+                <li>Search bar - Search for a specific date.</li>
+            </ul>
+        </p>
+
+    </div>
+
+    <div id="Status" class="tabcontent">
+
+        <h2>
+            View Status
+        </h2>
+        <img src="./screenshots/status.png" />
+        <p>
+            The view status page is used to view the status of all household fire alarms and CO2 detectors.
+            <ul>
+                <li>Power button - used to disable all fire alarms and CO2 detectors.</li>
+            </ul>
+        </p>
+
+    </div>
+
+
+    <script>
+
+        document.getElementById("defaultOpen").click();
+
+        function back() {
+            window.history.back();
+        }
+
+        function tabChange(evt, cityName) {
+            var i, tabcontent, tablinks;
+
+            tabcontent = document.getElementsByClassName("tabcontent");
+
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            tablinks = document.getElementsByClassName("tablinks");
+
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+
+
+    </script>
+
+
+    <footer class="footer">
+        <p>Bedrock Security, Copyright &copy; 2020</p>
+    </footer>
+
+</body>
+</html>

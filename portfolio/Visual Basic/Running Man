@@ -1,0 +1,108 @@
+'This program makes the space runner run, jump, and stop running when a button is clicked. 
+'
+'At the start of this program a picture box and 3 buttons should be visible. 
+
+Public Class Form1
+    Private Sub tmrSpeed_Tick(sender As Object, e As EventArgs) Handles tmrSpeed.Tick
+
+        Static intCounter As Integer = 0
+
+        'Pictures will continuously run
+
+        Select Case intCounter
+            Case 0
+                Me.picSpaceRunner.Image = My.Resources.r0
+            Case 1
+                Me.picSpaceRunner.Image = My.Resources.r1
+            Case 2
+                Me.picSpaceRunner.Image = My.Resources.r2
+            Case 3
+                Me.picSpaceRunner.Image = My.Resources.r3
+            Case 4
+                Me.picSpaceRunner.Image = My.Resources.r4
+            Case 5
+                Me.picSpaceRunner.Image = My.Resources.r5
+            Case 6
+                Me.picSpaceRunner.Image = My.Resources.r6
+            Case 7
+                Me.picSpaceRunner.Image = My.Resources.r7
+            Case 8
+                Me.picSpaceRunner.Image = My.Resources.r8
+            Case 9
+                Me.picSpaceRunner.Image = My.Resources.r9
+        End Select
+
+        intCounter += 1
+
+        If intCounter = 10 Then
+            intCounter = 0
+        End If
+
+        picSpaceRunner.Location = New Point(picSpaceRunner.Location.X + 20, picSpaceRunner.Location.Y)
+
+        If picSpaceRunner.Left > 400 Then
+            picSpaceRunner.Location = New Point(-200, 230)
+
+        End If
+
+    End Sub
+
+    Private Sub btnFaster_Click(sender As Object, e As EventArgs) Handles btnRun.Click
+        Me.tmrSpeed.Enabled = True
+
+        Me.tmrSpeed.Interval = 40 'Speeds up the running
+
+
+
+    End Sub
+
+    Private Sub btnSlower_Click(sender As Object, e As EventArgs) Handles btnStop.Click
+
+        Me.tmrSpeed.Enabled = False 'Stops the running
+
+
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        tmrSpeed.Enabled = True
+        tmrSpeed.Interval = 40
+
+
+    End Sub
+
+    Private Sub btnJump_Click(sender As Object, e As EventArgs) Handles btnJump.Click
+
+        tmrJump.Enabled = True
+        tmrJump.Interval = 1
+
+
+    End Sub
+
+
+    Private Sub tmrJump_Tick(sender As Object, e As EventArgs) Handles tmrJump.Tick
+
+        Static intTop As Integer
+        Static intCounter As Integer
+        Dim intStep As Integer = 5
+
+        If intCounter = 0 Then intTop = picSpaceRunner.Top
+
+        intCounter += 1
+        'Code to make space runner jump up an down
+        Select Case intCounter
+            Case 1 To 15
+                picSpaceRunner.Top -= intStep 'Makes runner rise
+            Case 16 To 30
+                picSpaceRunner.Top += intStep 'Makes runner fall
+            Case Else
+                picSpaceRunner.Top = intTop
+                intCounter = 0
+                tmrJump.Enabled = False
+        End Select
+    End Sub
+End Class
+
+'What I learned: How to use and manipulate coordinates. 
+'
+'What I had difficulties with: Making the picture box "Jump". I Eventually found a forum that helped someone who was making a game and couldn't
+'                              get their charater to jump, so I swapped out the keys for a button. 

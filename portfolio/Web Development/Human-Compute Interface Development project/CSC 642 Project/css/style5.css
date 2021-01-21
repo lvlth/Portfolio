@@ -1,0 +1,96 @@
+/* style5.css */
+/* Security */
+/* Lavante Hammond */
+
+
+body {
+    font: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+.header {
+    background: #b669c9;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    align-content: end;
+    font-size: 35px;
+    height: 100px;
+}
+
+.sub_header {
+    background-color: #000000;
+    align-content: center;
+    color: white;
+    text-align: center;
+}
+
+.search {
+    float: right;
+}
+
+.helpbtn {
+    float: right;
+}
+
+.backbtn {
+    float: left;
+}
+
+.communityAlertBanner {
+    height: 50px;
+}
+
+.row {
+    border: 0px solid #fff;
+    padding: 0px;
+    height: 500px;
+}
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+
+.middle {
+    width: 95%;
+    height: 515px;
+    float: left;
+    padding: 20px;
+    margin: 0px;
+    display: inline-block;
+}
+
+
+
+
+.homebtn {
+    width: 200px;
+    height: 200px;
+}
+
+.center {
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(100px,100px);
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+    margin-top: 20px;
+    color: #ffffff;
+    background: #b669c9;
+    height: 80px;
+    width: 100%
+}
+
+p.footer {
+    text-align: left;
+}

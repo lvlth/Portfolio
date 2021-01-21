@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<!-- alarms.html -->
+<!-- Security -->
+<!--Lavante Hammond -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bedrock Security | Alarms</title>
+    <link rel="stylesheet" href="./css/style4.css">
+
+</head>
+
+<body>
+
+    <header>
+
+
+        <div class="header">
+            <h1>
+                Alarms
+                <div class="backbtn">
+                    <button type="button" onclick="location.href='index.html'" style="
+                    height: 40px;
+                    width: 60px;
+                    background-image: url('./img/back.png');
+                    background-size: cover;
+                    background-position: center;
+                    transform:translateY(-20px);
+                    "></button>
+                </div>
+                <div class="panicbtn" style="
+                transform: translateX(-20px);">
+                    <button type="button" onclick="panic()" style="
+                  height: 50px;
+                  width: 50px;
+                  background-color: red;
+                  border-radius: 50%;">
+                        !
+                    </button>
+                </div>
+            </h1>
+        </div>
+    </header>
+
+    <div class="row">
+        <div class="left">
+            <button type="button" style="
+        height: 100%;
+        width: 100%;
+        background-image: url('./img/stay.png');
+        background-size: cover;
+        background-position: center;" onclick="alert('The alarm has been set to stay.'), setalarm()">
+            </button>
+        </div>
+
+        <div class="right">
+            <button type="button" style="height: 100%; width: 100%;
+        background-image: url('./img/away.png');
+        background-size: cover;
+        background-position: center; " onclick="alert('The alarm has been set to away.'), setalarm()">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="midrow">
+
+        <button id="disarm" class="disarm" type="button" onclick="disarm()" style="
+            height: 100%;
+            width: 100%;
+            background-image: url('./img/disarm.png');
+            background-size: cover;
+            background-position: center;
+           "></button>
+
+    </div>
+
+    <div class="bottomrow">
+
+        <div class="left2">
+            <button type="button" style="height: 100%; width: 100%;" onclick="location.href='activity.html'">View Activty</button>
+        </div>
+
+        <div class="right">
+            <button type="button" style="height: 100%; width: 100%;" onclick="location.href='status.html'">View Status</button>
+        </div>
+
+    </div>
+
+    <script>
+        var disarmbtn = document.getElementById("disarm");
+
+        disarmbtn.disabled = true;
+
+        disarmbtn.style.opacity = "0.2";
+
+
+        function panic() {
+            var ver = window.confirm("The authorities will be notified. Are you sure?");
+
+            if (ver == true)
+                alert("The authoritiies have been notified");
+        }
+
+
+        function back() {
+            window.history.back();
+        }
+
+        function setalarm() {
+            if (disarmbtn.disabled == true) {
+                disarmbtn.disabled = false;
+                disarmbtn.style.opacity = "1.0";
+                disarmbtn.style.backgroundImage = "url('./img/disarm2.png')";
+            }
+        }
+
+        function disarm() {
+
+            var passcode = Number(window.prompt("Enter passcode", ""));
+
+
+
+            if (Number.isInteger(passcode) == false) {
+                alert('Only digits are accepted.');
+                disarm();
+            }
+
+            else if (passcode == 1234) {
+                disarmbtn.disabled = true;
+                disarmbtn.style.backgroundImage = "url('./img/disarm.png')"
+                alert('The alarm has been disarmed');
+
+                if (disarmbtn.disabled == true) {
+                    disarmbtn.style.opacity = "0.2";
+                }
+            }
+
+            else {
+                disarm();
+            }
+
+
+
+        }
+
+
+    </script>
+
+    <footer>
+        <p>Bedrock Security, Copyright &copy; 2020</p>
+    </footer>
+
+</body>
+
+
+
+</html>

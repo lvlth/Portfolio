@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<!-- cameras.html -->
+<!-- Security -->
+<!--Lavante Hammond -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bedrock Security | Cameras</title>
+    <link rel="stylesheet" href="./css/style2.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="header">
+            <h1>
+                Cameras
+                <div class="backbtn">
+                    <button type="button" onclick="back()" style="
+                    height: 40px;
+                    width: 60px;
+                    background-image: url('./img/back.png');
+                    background-size: cover;
+                    background-position: center;
+                    transform:translateY(-20px);
+                    "></button>
+                </div>
+            </h1>
+        </div>
+    </header>
+
+    <div class="row">
+        <div class="left">
+            <button type="button" onclick="location.href='history.html'" style="
+                height: 100%;
+                width: 100%;
+                background-image: url('./img/history.png');
+                background-size: cover;
+                background-position: center;"
+            </button>
+        </div>
+        <div class="middle">
+            <video width="100%" , height="500" controls>
+                <source src="">
+                Your browser does not support the video
+            </video>
+
+            <button type="button" style="
+                width: 100%;
+                height: 70px;
+                background-image: url('./img/talk.png');
+                background-position: center;"></button>
+        </div>
+        <div class="right">
+            <nav>
+                <ul style="list-style-type: none;">
+                    <li><div class="thumb"><img src="./img/play.png" height="100" width="100">Front Porch </div></li>
+                    <li><div class="thumb"><img src="./img/play.png" height="100" width="100">Backyard </div></li>
+                    <li><div class="thumb"><img src="./img/play.png" height="100" width="100">Left Side </div></li>
+                    <li><div class="thumb"><img src="./img/play.png" height="100" width="100">Right Side </div></li>
+                    <li><div class="thumb"><img src="./img/play.png" height="100" width="100">Upstairs Hall </div></li>
+                    <li><div class="thumb"><img src="./img/play.png" height="100" width="100">Downstairs Hall </div></li>
+                    <li><div class="thumb"><img src="./img/play.png" height="100" width="100">Stairwell </div></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Bedrock Security, Copyright &copy; 2020</p>
+    </footer>
+
+
+    <script>
+        function back() {
+            window.history.back();
+        }
+
+    </script>
+</body>
+
+
+
+
+</html>

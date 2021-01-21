@@ -1,0 +1,57 @@
+/* style7.css */
+/* Security */
+/* Lavante Hammond */
+
+
+
+body {
+    font: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+.header {
+    background: #b669c9;
+    border-bottom: 3px solid black;
+    color: #ffffff;
+    padding: 30px;
+    text-align: center;
+    align-content: end;
+    font-size: 35px;
+    height: 100px;
+}
+
+img {
+    height: 304px;
+    width: 638px;
+}
+
+div .home {
+    overflow-y: scroll;
+}
+
+
+.row {
+    border: 0px solid #fff;
+    padding: 0px;
+    height: 600px;
+    box-sizing: border-box;
+}
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+    margin-top: 20px;
+    color: #ffffff;
+    background: #b669c9;
+    height: 80px;
+    width: 100%;
+    border-top: 3px solid black;
+}
+
+p.footer {
+    text-align: left;
+}

@@ -1,0 +1,129 @@
+/* style2.css */
+/* Security */
+/* Lavante Hammond */
+
+
+
+
+body {
+    font: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+.header {
+    background: #b669c9;
+    border-bottom: 3px solid black;
+    color: #ffffff;
+    padding: 30px;
+    text-align: center;
+    align-content: end;
+    font-size: 35px;
+    height: 100px;
+}
+
+.helpbtn {
+    float: right;
+}
+
+.backbtn{
+    float:left; 
+}
+.communityAlertBanner {
+    height: 50px;
+}
+
+.row {
+    border: 0px solid #fff;
+    padding: 0px;
+    height: 515px;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+.left {
+    width: 15%;
+    height: inherit;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.left button:hover{
+    opacity: 0.8;
+}
+
+
+.middle {
+    width: 50%;
+    height: inherit;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+ 
+.middle button:active{
+    opacity: 0.8;
+}
+
+.right {
+    width: 35%;
+    height: inherit;
+    float: right;
+    padding: 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+ .right li {
+     border-bottom: 2px solid #808080; 
+ }
+
+.homebtn {
+    width: 200px;
+    height: 200px;
+}
+
+.center {
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(100px,100px);
+}
+
+.thumb{
+    height:100px;
+    width: inherit;
+}
+
+.thumb:hover {
+    background-color: blueviolet;
+    opacity: 50%;
+}
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+    margin-top: 20px;
+    color: #ffffff;
+    background: #b669c9;
+    height: 80px;
+    width: 100%
+}
+
+p.footer {
+    text-align: left;
+}

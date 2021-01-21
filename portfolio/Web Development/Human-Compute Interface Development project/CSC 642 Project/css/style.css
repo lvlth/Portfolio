@@ -1,0 +1,110 @@
+/* style.css */
+/* Security */
+/* Lavante Hammond */
+
+
+
+body {
+    font: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+.header {
+    background: #b669c9;
+    border-bottom: 3px solid black;
+    color: #ffffff;
+    padding: 30px;
+    text-align: center;
+    align-content: end;
+    font-size: 35px;
+    height: 100px;
+}
+
+
+
+.helpbtn{
+    float:right;
+}
+
+
+.communityAlertBanner{
+    height: 25px;
+    background-color: yellow;
+    border-bottom: 3px solid black;
+}
+
+.row{
+    border: 0px solid #fff;
+    padding: 0px;
+    height: 700px;
+    box-sizing: border-box;
+}
+
+
+.left {
+    background-image: url("../img/alarms.png");
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: inherit;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    transition-duration: 0.4s;
+    box-sizing: border-box;
+    
+}
+
+.left:hover {
+    opacity: 80%;
+}
+
+.right {
+    background-image: url("../img/cameras.png");
+    background-size: cover;
+    background-position: center;
+    border-left: 2px solid black;
+    width: 50%;
+    height: inherit;
+    float: right;
+    padding: 50px;
+    margin: 0px;
+    display: inline-block;
+    transition-duration: 0.4s;
+    box-sizing: border-box;
+}
+
+.right:hover{
+   opacity: 80%;
+}
+
+.homebtn{
+    width:200px;
+    height:200px;
+}
+
+.center {
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform:translate(100px,100px);
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+    margin-top: 20px;
+    color: #ffffff;
+    background: #b669c9;
+    height: 80px;
+    width: 100%;
+    border-top: 3px solid black;
+}
+
+p.footer{
+    text-align:left;
+}
+

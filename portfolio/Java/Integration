@@ -1,0 +1,63 @@
+/*
+This program approximates the area under a circle with radius r using arithmetic
+based on calculus.
+ */
+import java.util.Scanner;
+
+public class Question6 {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        //prompt user to input radius
+        System.out.println("Enter the radius of the circle: ");
+        double r = input.nextDouble(); //Radius
+
+        //Checks if the entered radius is valid
+        while (r <= 0) {
+            System.out.println("The radius cannot be less than or equal to 0"
+                    + ". Enter a new radius");
+            r = input.nextDouble();
+        }
+        double x = -r; //Starting point for the interval [-r,r]
+
+        //prompt user to input number of rectangles [x,r]
+        System.out.println("Enter the number of rectangles (More rectangles will"
+                + " provide a more accurate approximation) :");
+        double n = input.nextDouble();
+
+        //Equivalent to the formula (b-a)/n
+        double width = (r - x) / n;
+
+        //Prints the approximated area
+        System.out.println("The estimated area of the circle is "
+                + area(n, r, x, width));
+
+    }
+
+    //Method that calculates the area using summations
+    public static double area(double n, double r, double x, double width) {
+        double height;
+        double halfArea = 0;
+
+        //For loop that increments x by the width until x is less than or equal to r
+        for (; x <= r; x += width) {
+            //The height of the graph changes each iteration as x approaches r
+            height = height(x, r);
+
+            //Concatenates the area of each rectangle on the interval [x,r]
+            halfArea += (width * height);
+        }
+
+        return halfArea * 2; //Returns the area of the entire circle
+    }
+
+    //Method that calculates the height of the graph based on the value of x
+    public static double height(double x, double r) {
+        //Absolute value of x and r taken since -x^2 = x^2
+        x = Math.abs(x);
+        r = Math.abs(r);
+        //sqrt(r^2 - x^2) = y, which is the height of the graph at x above the x-axis
+        return Math.sqrt((Math.pow(r, 2) - Math.pow(x, 2)));
+    }
+}
